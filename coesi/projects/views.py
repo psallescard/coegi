@@ -19,12 +19,12 @@ def projects_list_view(request) -> render:
     except ValueError:
         page = 1
 
-    page_size = 5
+    page_size = 6
     start = (page - 1) * page_size
     end = page * page_size
 
     # Query: Filter by owner and order by creation date (newest)
-    queryset = Project.objects.filter(owner=request.user).order_by("-created_at")
+    queryset = Project.objects.filter(owner=request.user).order_by("-is_pinned", "-created_at")
 
     # Fetch N+1 items to determine if a "Show More" button is needed
     projects_slice = queryset[start : end + 1]

@@ -1,8 +1,10 @@
-
 {% for project in projects %}
 <a href="#"
-   class="flex items-center gap-3 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 transition-all group">
+   class="flex items-center justify-between gap-3 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 transition-all group">
     <span class="text-sm font-medium">{{ project.name }}</span>
+    {% if project.is_pinned %}
+    <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="24px" fill="#45556c" class="shrink-0"><path d="m640-480 80 80v80H520v240l-40 40-40-40v-240H240v-80l80-80v-280h-40v-80h400v80h-40v280Zm-286 80h252l-46-46v-314H400v314l-46 46Zm126 0Z"/></svg>
+    {% endif %}
 </a>
 {% empty %}
 <p class="px-3 text-xs text-slate-400 italic">No projects found.</p>
