@@ -1,5 +1,5 @@
 [project]
-name = "coesi"
+name = "coegi"
 version = "0.1.0"
 description = "Pratical personal tasks management application."
 readme = "README.md"

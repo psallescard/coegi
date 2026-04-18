@@ -15,7 +15,6 @@
 <div id="replace-me-with-next-page"
      hx-get="{% url 'projects:projects_list' %}?page={{ next_page }}"
      hx-trigger="intersect once"
-     hx-indicator="#infinite-scroll-loader"
      hx-target="#replace-me-with-next-page"
      hx-swap="outerHTML"
      class="flex items-center justify-center p-4">

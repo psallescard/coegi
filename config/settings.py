@@ -27,8 +27,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # Coesi
-    "coesi.projects.apps.ProjectsConfig",
+    # Coegi
+    "coegi.projects.apps.ProjectsConfig",
 ]
 
 MIDDLEWARE = [
@@ -68,7 +68,7 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
-    }
+    },
 }
 
 
