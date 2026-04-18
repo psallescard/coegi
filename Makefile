@@ -1,5 +1,7 @@
 .PHONY: help migrations migrate run test tw-build tw-watch docs
 
+-include .env.local
+
 PYTHON 		:= python
 MANAGER 	:= $(PYTHON) manage.py
 LOCAL_IP 	?= 127.0.0.1

@@ -14,6 +14,56 @@ dependencies = [
 dev = [
     "django-stubs>=6.0.2",
     "djlint>=1.36.4",
+    "ipython>=9.12.0",
     "mypy>=1.20.1",
     "ruff>=0.15.10",
+]
+
+[tool.ruff]
+line-length = 120
+indent-width = 4
+target-version = "py312"
+output-format = "grouped"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "lf"
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "E111",     # Ignore indentation-with-invalid-multiple (conflict)
+    "E114",     # Ignore indentation-with-invalid-multiple-comment (conflict)
+    "E117",     # Ignore over-indented (conflict)
+    "E501",     # Ignore line too long
+    "N803",     # Ignore non-lower function arguments
+    "N806",     # Ignore non-lower function variables
+    "N812",     # Ignore non-conventional import alias
+    "B008",     # Ignore function calls in function arguments
+    "B904",     # Ignore raise whithout 'from'
+    "W191",     # Ignore tab-indentation (conflict)
+    "D",        # Ignore docstring rules
+    "CPY",      # Ignore copyright notice obligation
+    "FIX002",   # line-contains-todo
+    "ISC001",   # Conflicts with formatter ruff
+    "PLR0904",  # Too many public methods (... > 20)
+    "TD002",    # Missing author in TODO
+    "TD003",    # missing-todo-link
+    "TRY",      # Ignore good practices for exception
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.isort]
+section-order = ["future", "standard-library", "third-party", "django", "first-party", "local-folder"]
+
+[tool.ruff.lint.isort.sections]
+"django" = ["django"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = [
+    "TID252",   # Ignore relative imports in all `__init__.py` files
 ]
