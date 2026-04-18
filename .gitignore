@@ -23,3 +23,7 @@ wheels/
 
 # Logs
 *.log
+
+# IDE settings
+.vscode/
+.ideia/
