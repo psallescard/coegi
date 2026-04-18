@@ -1,0 +1,24 @@
+
+{% for project in projects %}
+<a href="#"
+   class="flex items-center gap-3 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-50 transition-all group">
+    <span class="text-sm font-medium">{{ project.name }}</span>
+</a>
+{% empty %}
+<p class="px-3 text-xs text-slate-400 italic">No projects found.</p>
+{% endfor %}
+
+{% if next_page %}
+<div id="replace-me-with-next-page">
+    <button
+        hx-get="{% url 'projects:projects_list' %}?page={{ next_page }}"
+        hx-target="#replace-me-with-next-page"
+        hx-swap="outerHTML"
+        class="w-full text-left px-3 py-2 text-xs text-blue-600 font-bold hover:underline flex items-center gap-2"
+    >
+        <span>Show more...</span>
+        <!-- Loader indicator -->
+        <span class="htmx-indicator animate-spin text-slate-400">...</span>
+    </button>
+</div>
+{% endif %}
