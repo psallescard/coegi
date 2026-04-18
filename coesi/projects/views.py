@@ -19,7 +19,9 @@ def projects_list_view(request) -> render:
     except ValueError:
         page = 1
 
-    page_size = 6
+    print(f"Fetching projects for page {page}...")  # Debugging statement
+
+    page_size = 10
     start = (page - 1) * page_size
     end = page * page_size
 
